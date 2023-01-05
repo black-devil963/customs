@@ -6,6 +6,8 @@ app.use(cors());
 const request = require('request');
 var credentials = btoa("rzp_test_0a359K3M2JK1sI:40C2WbRdKCEy7sKLSqbKR3BE");
 var amt=209;
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
  app.post("/",function (req,res){
 amt=req.body.amount;
 const options = {
