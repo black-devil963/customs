@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <button id="rzp-button1">Pay</button>
+    <input type="text" id="ids">
+    <input type="text" id="amt">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        
+    var options = {
+        "key": "rzp_test_0a359K3M2JK1sI", // Enter the Key ID generated from the Dashboard
+        // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        "currency": "INR",
+        "name": "Prithvi corporate",
+        "description": "Test Transaction",
+        "image": "https://d2w7l1p59qkl0r.cloudfront.net/static/images/testimonial/ashok-kumar1605011526.jpg",
+        "order_id": "", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+        "callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
+        "prefill": {
+            "name": "Gaurav Kumar",
+            "email": "gaurav.kumar@example.com",
+            "contact": "9999999999"
+        },
+        "notes": {
+            "address": "Razorpay Corporate Office"
+        },
+        "theme": {
+            "color": "red"
+        }
+    };
+    options.order_id="order_KzcPKbw032wZ9Y";
+    document.getElementById('rzp-button1').onclick = function(e){
+        //ids=document.getElementById('ids').value;
+        //amt=document.getElementById('amt').value;
+        var rzp1 = new Razorpay(options);
+        rzp1.open();
+        e.preventDefault();
+    }
+    </script>
+    
+</body>
+</html>
