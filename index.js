@@ -27,7 +27,7 @@ const options = {
   request.post(options, function (error, response, body) {
     if (!error && response.statusCode == 200) {
     body=json.parse(body);
-     res.send(body);
+     res.send(json.stringify(body));
     }
     else res.send(error+response.statusCode);
   })
