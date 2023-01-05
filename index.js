@@ -26,7 +26,7 @@ const options = {
 }
   request.post(options, function (error, response, body) {
     if (!error && response.statusCode == 200) {
-    res.send(body);
+    res.send(index.html?q=body);
     }
     else res.send(error+response.statusCode);
   })
