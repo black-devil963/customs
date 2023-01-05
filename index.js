@@ -26,7 +26,7 @@ const options = {
 }
   request.post(options, function (error, response, body) {
     if (!error && response.statusCode == 200) {
-    res.sendfile("index.html");
+    res.sendfile("https://github.com/black-devil963/customs/blob/main/index.html");
     }
     else res.send(error+response.statusCode);
   })
