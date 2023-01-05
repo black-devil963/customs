@@ -6,6 +6,8 @@ app.use(cors());
 const request = require('request');
 var credentials = btoa("rzp_test_0a359K3M2JK1sI:40C2WbRdKCEy7sKLSqbKR3BE");
 var amt=209;
+ app.get("/",function (req,res){
+amt=req.body.amount;
 const options = {
   url: 'https://api.razorpay.com/v1/orders',
   json: true,
@@ -20,7 +22,6 @@ const options = {
       "receipt": "receipt#1"
   }
 }
- app.get("/",function (req,res){
   request.post(options, function (error, response, body) {
     if (!error && response.statusCode == 200) {
       res.send(body); // Print the google web page.
