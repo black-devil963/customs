@@ -10,6 +10,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
  app.post("/",function (req,res){
 amt=req.body.amount;
+nts=req.body.notes;
 const options = {
   url: 'https://api.razorpay.com/v1/orders',
   json: true,
@@ -21,7 +22,8 @@ const options = {
   body: {
     "amount": amt,
       "currency": "INR",
-      "receipt": "receipt#1"
+      "receipt": "receipt#1",
+  notes: nts
   }
 }
   request.post(options, function (error, response, body) {
